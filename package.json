@@ -1,0 +1,15 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "N00bie",
+  "license": "ISC",
+  "description": "Digital pathshala week 01 backend ",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
