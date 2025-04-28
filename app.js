@@ -1,5 +1,8 @@
 const express = require("express");
+
 const app = express(); // or alternative let app = require('express')();
+// importing databse module here
+require("./database/connection.js");
 
 ///////////////////////////////////// request and response for a certain route .
 
@@ -42,6 +45,9 @@ app.patch("/books/:id", (req, res) => {
     message: "Book updated Successfully.",
   });
 });
+
+DATABASE_URL =
+  "postgresql://postgres.loghzraywjbuvnutqkif:Password@123@aws-0-ap-south-1.pooler.supabase.com:6543/postgres";
 
 app.listen(9002, function () {
   console.log("Server started Listening ............................");
