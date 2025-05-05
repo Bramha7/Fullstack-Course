@@ -1,1 +1,1 @@
-The whole project is all about PERN stack (prostgres express react node). Firstly, We build backend system with express and node with the use of ORM (sequelize) for database connection to the cloud databse provide i.e supabase.
+The whole project is all about PERN stack (prostgres express react node). Firstly, We build backend system with express and node with the use of ORM (sequelize) for database connection to the cloud database provider i.e supabase.
