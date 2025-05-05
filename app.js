@@ -1,8 +1,13 @@
 const express = require("express");
+const { books } = require("./DB/connection.js");
+const { fetchbooks } = require("./controllers/db.controller.js");
+const authRoute = require("./routes/books.route.js");
 
 const app = express(); // or alternative let app = require('express')();
 // importing databse module here
-require("./database/connection.js");
+require("./DB/connection.js");
+// it generally tells backend to view data as json so that when we receiva a body from user side we can use the data in database and view in console
+app.use(express.json());
 
 ///////////////////////////////////// request and response for a certain route .
 
@@ -18,20 +23,8 @@ app.get("/about", (req, res) => {
 */
 ///////////////////////// crud operation api ////////////////////
 
-app.get("/books", (req, res) => {
-  // logic to fetch books from database
-  res.json({
-    message: "books fetched successfully.",
-  });
-});
+app.use("/", authRoute);
 
-app.post("/books", (req, res) => {
-  // logic to add book to database
-
-  res.json({
-    message: "Books added successfully!!",
-  });
-});
 // delete books
 app.delete("/books/:id", (req, res) => {
   res.json({
@@ -45,9 +38,6 @@ app.patch("/books/:id", (req, res) => {
     message: "Book updated Successfully.",
   });
 });
-
-DATABASE_URL =
-  "postgresql://postgres.loghzraywjbuvnutqkif:Password@123@aws-0-ap-south-1.pooler.supabase.com:6543/postgres";
 
 app.listen(9002, function () {
   console.log("Server started Listening ............................");
