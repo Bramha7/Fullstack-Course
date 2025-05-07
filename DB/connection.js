@@ -1,10 +1,12 @@
 ////////////////////////////// logic behind connection of database///////////////////////////
 
+require("dotenv").config();
 const { Sequelize, DataTypes } = require("sequelize");
+url = process.env.POSTGRES_URL;
 
-const sequelize = new Sequelize(
-  "postgresql://postgres.loghzraywjbuvnutqkif:IqpywCRzaUVS4Qmh@aws-0-ap-south-1.pooler.supabase.com:6543/postgres",
-);
+const sequelize = new Sequelize(url, {
+  dialect: "postgres",
+});
 //////////////////////////////// checking whether connection is successsful or not
 sequelize
   .authenticate()

@@ -1,11 +1,11 @@
 const express = require("express");
+require("dotenv").config();
 const { books } = require("./DB/connection.js");
 const { fetchbooks } = require("./controllers/db.controller.js");
 const authRoute = require("./routes/books.route.js");
 
 const app = express(); // or alternative let app = require('express')();
 // importing databse module here
-require("./DB/connection.js");
 // it generally tells backend to view data as json so that when we receiva a body from user side we can use the data in database and view in console
 app.use(express.json());
 
